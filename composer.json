@@ -1,0 +1,19 @@
+{
+    "name": "lemelinha/portifolio",
+    "description": "Portifólio Profissional",
+    "autoload": {
+        "psr-4": {
+            "app\\": "app/"
+        },
+        "files": [
+            
+        ]
+    },
+    "authors": [
+        {
+            "name": "Lucas Leme",
+            "email": "l.leme3008@gmail.com"
+        }
+    ],
+    "require": {}
+}
