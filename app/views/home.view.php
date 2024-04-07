@@ -16,5 +16,8 @@
             <a href="#" target="_blank"><i class="fa-brands fa-linkedin fa-2xl"></i></a>
         </nav>
     </header>
+    <main>
+
+    </main>
 </body>
 </html>

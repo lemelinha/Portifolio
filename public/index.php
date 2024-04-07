@@ -17,7 +17,10 @@ try {
 
     $view = $data['view'];
     
+    $connection = new app\database\Connection($dbname='db_portifolio');
+
     require VIEW_PATH . $view;
 } catch (Exception $e) {
-    echo "Erro: " . $e->getMessage();
+    require VIEW_PATH . 'error.view.php';
+    die();
 }
