@@ -18,6 +18,7 @@
         form {
             color: var(--color-text);
             font-family: var(--font-text);
+            padding: 5px;
         }
 
         input {
@@ -29,6 +30,7 @@
             background-color: var(--color-detach);
             font-weight: bold;
             transition: 200ms;
+            margin-top: 5px;
         }
 
         input[type="submit"]:hover{
