@@ -3,6 +3,8 @@
 require 'bootstrap.php';
 
 try {
+    $connection = new app\database\Connection('localhost', 'db_portifolio', 'root', '');
+    
     $data = router();
 
     extract($data['data']??[]);
@@ -17,7 +19,6 @@ try {
 
     $view = $data['view'];
     
-    $connection = new app\database\Connection($dbname='db_portifolio');
 
     require VIEW_PATH . $view;
 } catch (Exception $e) {

@@ -3,6 +3,7 @@
 body {
     height: 100vh;
     background-color: var(--color-background);
+    font-family: var(--font-text);
 }
 
 header {
@@ -37,3 +38,16 @@ header i.fa-square-github {
 header i.fa-linkedin {
     color: #0e76a8;
 }
+
+main .sobre-mim {
+    padding: 20px;
+    width: 70vw;
+    margin: 20px auto;
+    background-color: var(--color-background-complement);
+    color: var(--color-text);
+    border: 1px solid var(--color-detach);
+    border-radius: 8px;
+}
+ main .sobre-mim h2 {
+    margin-bottom: 5px;
+ }

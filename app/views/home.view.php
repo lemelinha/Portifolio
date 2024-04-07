@@ -17,7 +17,14 @@
         </nav>
     </header>
     <main>
+        <section class="sobre-mim">
+            <h2>Sobre Mim</h2>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi, blanditiis error? Doloribus non, qui ab iure minima magni rem, porro ex repellendus dignissimos error similique doloremque rerum, maxime a dolorem. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione laborum ipsa asperiores, quibusdam ut exercitationem suscipit reiciendis maiores quidem eaque voluptate rem accusantium quod harum magnam facilis quos quasi explicabo.
 
+            </p>
+        </section>
+        
     </main>
 </body>
 </html>

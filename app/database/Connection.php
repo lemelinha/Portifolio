@@ -17,7 +17,42 @@ class Connection {
 
     function Select($statement, $parameters){
         try {
-            //code...
+            $query = $this->executeStatement($statement, $parameters);
+            return $query->fetchAll();
+        } catch (Exception $e) {
+            throw $e;
+        }
+    }
+
+    function Insert($statement, $parameters){
+        try {
+            $this->executeStatement($statement, $parameters);
+        } catch (Exception $e) {
+            throw $e;
+        }
+    }
+
+    function Update($statement, $parameters){
+        try {
+            $this->executeStatement($statement, $parameters);
+        } catch (Exception $e) {
+            throw $e;
+        }
+    }
+
+    function Delete($statement, $parameters){
+        try {
+            $this->executeStatement($statement, $parameters);
+        } catch (Exception $e) {
+            throw $e;
+        }
+    }
+
+    function executeStatement($statement, $parameters){
+        try {
+            $query = $this->connection->prepare($statement);
+            $query->execute($parameters);
+            return $query;
         } catch (Exception $e) {
             throw $e;
         }
