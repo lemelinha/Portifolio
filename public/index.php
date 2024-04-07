@@ -17,7 +17,7 @@ try {
 
     $view = $data['view'];
     
-    require VIEW_PATH . 'master.view.php';
+    require VIEW_PATH . $view;
 } catch (Exception $e) {
     echo "Erro: " . $e->getMessage();
 }
