@@ -1,2 +1,39 @@
 @import '../global.css';
 
+body {
+    height: 100vh;
+    background-color: var(--color-background);
+}
+
+header {
+    background-color: var(--color-background-complement);
+    padding: 20px;
+    box-shadow: 0 8px 8px hsl(0deg 0% 0% / 0.075);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 12px;
+}
+
+header > img {
+    border-radius: 50%;
+    border: 2px solid var(--color-detach);
+}
+
+header > h1 {
+    font-family: var(--font-title-secundary);
+    color: var(--color-title);
+}
+
+header > nav {
+    display: flex;
+    column-gap: 10px;
+}
+
+header i.fa-square-github {
+    color: #010008;
+}
+
+header i.fa-linkedin {
+    color: #0e76a8;
+}

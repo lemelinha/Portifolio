@@ -12,11 +12,11 @@
 
 
 :root{
-    --color-background: #0D3B66;
-    --color-title: #145374;
-    --color-text: #5588A3;
-    --color-detach: #E8E8E8;
-    --color-important: #FF6B6B;
+    --color-background: #0D1117;
+    --color-background-complement: #161B22;
+    --color-title: #58A6FF;
+    --color-text: #FFFFFF;
+    --color-detach: #1F6FEB;
     --font-title: "Roboto Slab";
     --font-title-secundary: "Montserrat";
     --font-text: "Open Sans";
@@ -24,11 +24,14 @@
     --font-detach: "Lato";
 }
 
-
 * {
     padding: 0;
     margin: 0;
     border: 0;
     outline: 0;
     box-sizing: border-box;
+}
+
+a {
+    color: #fff;
 }
