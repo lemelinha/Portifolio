@@ -3,7 +3,7 @@
 namespace app\controllers;
 
 class Home {
-    public function index(){
+    public function index(){       
         return [
             "view" => "home.view.php"
         ];

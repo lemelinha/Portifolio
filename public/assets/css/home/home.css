@@ -39,15 +39,43 @@ header i.fa-linkedin {
     color: #0e76a8;
 }
 
-main .sobre-mim {
+main .sobre-mim, 
+main .tecnologias,
+.projeto {
     padding: 20px;
-    width: 70vw;
+    max-width: 80vw;
     margin: 20px auto;
     background-color: var(--color-background-complement);
     color: var(--color-text);
     border: 1px solid var(--color-detach);
     border-radius: 8px;
 }
- main .sobre-mim h2 {
+
+main .sobre-mim h2,
+main .tecnologias h2 {
     margin-bottom: 5px;
- }
+}
+
+.projeto-container{
+    max-width: 80vw;
+    color: var(--color-text);
+    margin: 30px auto;
+}
+
+.projetos-container h2{
+    color: var(--color-title);
+    font-family: var(--font-title-secundary);
+}
+
+.projeto {
+    display: flex;
+    flex-direction: row;
+}
+
+.projeto .carousel {
+    flex: 3;
+}
+
+.projeto .sobre-projeto {
+    flex: 6;
+}

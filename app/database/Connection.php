@@ -15,7 +15,7 @@ class Connection {
         }
     }
 
-    function Select($statement, $parameters){
+    function Select($statement, $parameters = []){
         try {
             $query = $this->executeStatement($statement, $parameters);
             return $query->fetchAll();
@@ -24,7 +24,7 @@ class Connection {
         }
     }
 
-    function Insert($statement, $parameters){
+    function Insert($statement, $parameters = []){
         try {
             $this->executeStatement($statement, $parameters);
         } catch (Exception $e) {
@@ -32,7 +32,7 @@ class Connection {
         }
     }
 
-    function Update($statement, $parameters){
+    function Update($statement, $parameters = []){
         try {
             $this->executeStatement($statement, $parameters);
         } catch (Exception $e) {
@@ -40,7 +40,7 @@ class Connection {
         }
     }
 
-    function Delete($statement, $parameters){
+    function Delete($statement, $parameters = []){
         try {
             $this->executeStatement($statement, $parameters);
         } catch (Exception $e) {

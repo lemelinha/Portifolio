@@ -1,9 +1,10 @@
 <?php
 
 require 'bootstrap.php';
+use app\database\Connection;
 
 try {
-    $connection = new app\database\Connection('localhost', 'db_portifolio', 'root', '');
+    $connection = new Connection('localhost', 'db_portifolio', 'root', '');
     
     $data = router();
 

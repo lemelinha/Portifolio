@@ -24,7 +24,25 @@
 
             </p>
         </section>
-        
+        <section class="tecnologias">
+            <h2>Tecnologias</h2>
+            <p>
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Alias similique blanditiis tempore rerum ut culpa facere iusto temporibus quis cupiditate ullam sapiente est reiciendis amet, fugit quam. Repudiandae, quod rerum.
+            </p>
+        </section>
+        <section class="projetos-container">
+            <div class="projeto">
+                <div class="carousel">
+a
+                </div>
+                <div class="sobre-projeto">
+                    <h2>Titulo</h2>
+                    <div class="descricao">
+                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nostrum, officiis necessitatibus quis reprehenderit omnis esse reiciendis optio architecto quo aliquam voluptates, minus aspernatur consequuntur pariatur debitis illum expedita, fuga ipsam! Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia natus cum et aut dolorum delectus voluptatem labore iure velit ullam, sunt, magnam repellat exercitationem, rem rerum illo assumenda repudiandae deserunt.
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
 </body>
 </html>
