@@ -1,5 +1,5 @@
 <?php
 
-session_reset();
+session_start();
 
 require '../vendor/autoload.php';

@@ -1,4 +1,4 @@
-@import '../global.css';
+@import './global.css';
 
 body {
     height: 100vh;
@@ -79,3 +79,5 @@ main .tecnologias h2 {
 .projeto .sobre-projeto {
     flex: 6;
 }
+
+
