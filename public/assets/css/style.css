@@ -39,6 +39,10 @@ header i.fa-linkedin {
     color: #0e76a8;
 }
 
+main {
+    padding-bottom: 20px;
+}
+
 main .sobre-mim, 
 main .tecnologias,
 .projeto {
@@ -70,14 +74,55 @@ main .tecnologias h2 {
 .projeto {
     display: flex;
     flex-direction: row;
+    column-gap: 15px;
+    row-gap: 15px;
 }
 
-.projeto .carousel {
-    flex: 3;
+.projeto .carousel-container {
+    flex: 2;
 }
 
 .projeto .sobre-projeto {
     flex: 6;
 }
 
+.carousel-container {
+    display: flex;
+    flex-direction: column;
+    column-gap: 10px;
+    align-items: center;
+}
 
+div.btns {
+    display: flex;
+    flex-direction: row;
+    column-gap: 20px;
+}
+
+button#next, button#previous {
+    background-color: transparent;
+    background-image: url("../images/arrow-next-small-svgrepo-com.svg");
+    width: 2rem;
+    height: 2rem;
+    border: 0;
+    cursor: pointer;
+    display: block;
+    background-size: cover;
+}
+
+button#previous {
+    transform: rotate(180deg);
+}
+
+.carousel-container > span + div {
+    width: 200px;
+    height: 360px;
+    background-size: cover;
+    background-position: center center;
+}
+
+@media (max-width: 650px){
+    .projeto {
+        flex-direction: column;
+    }
+}

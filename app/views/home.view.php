@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portifólio</title>
     <link rel="stylesheet" href="<?= CSS . 'style.css?v=' . time() ?>">
@@ -32,9 +32,15 @@
         </section>
         <section class="projetos-container">
             <div class="projeto">
-                <div class="carousel">
-
+                <div class="carousel-container">
+                    <span></span>
+                    <div id="1"></div>
+                    <div class="btns">
+                        <button id="previous" onclick="previousImage(1)"></button>
+                        <button id="next" onclick="nextImage(1)"></button>
+                    </div>
                 </div>
+                <script src="<?= JS . 'script.js' ?>"></script>
                 <div class="sobre-projeto">
                     <h2>Titulo</h2>
                     <div class="descricao">
