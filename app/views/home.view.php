@@ -3,14 +3,16 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portifólio</title>
+    <title>Lucas Leme</title>
     <link rel="stylesheet" href="<?= CSS . 'style.css'?>">
+    <link rel="shortcut icon" href="assets/images/icon.png" type="image/x-icon">
     <script src="https://kit.fontawesome.com/cdd96683ff.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <header>
         <img src="<?= $adminInfo->cd_caminho_pfp ?>" alt="Foto Pessoal">
         <h1>Lucas Leme</h1>
+        <button type="button" class="btn" onclick="window.open('<?= $adminInfo->cd_caminho_curriculo ?>', '_blank')">Baixar Currículo</button>
         <nav>
             <a href="<?= $adminInfo->lk_github ?>" target="_blank"><i class="fa-brands fa-square-github fa-2xl"></i></a>
             <a href="<?= $adminInfo->lk_linkedin ?>" target="_blank"><i class="fa-brands fa-linkedin fa-2xl"></i></a>
