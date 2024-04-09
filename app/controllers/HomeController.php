@@ -11,9 +11,6 @@ class HomeController {
     }
 
     public function index(){       
-        if (class_exists('Home')){
-            echo 'exite';
-        }
         return [
             "view" => "home.view.php",
             "data" => [

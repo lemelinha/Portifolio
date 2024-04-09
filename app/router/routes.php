@@ -1,5 +1,5 @@
 <?php
 
 return [
-    '/' => 'Home@index'
+    '/' => 'Home@index',
 ];
