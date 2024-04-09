@@ -34,7 +34,7 @@ class Home {
                 $imagesArray[$image->id_projeto] = [];
             }
 
-            $imageSearch = 'http://localhost:5000/' . ($image->nm_caminho);
+            $imageSearch = HOST . ($image->nm_caminho);
 
             array_push($imagesArray[$image->id_projeto], $imageSearch);
         }

@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ERROR</title>
     <style>
-        @import 'http://localhost:5000/<?= CSS . 'global.css?v=' . time() ?>';
+        @import '<?= HOST . CSS . 'global.css?v=' . time() ?>';
 
         h1{
             color: var(--color-detach);
