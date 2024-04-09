@@ -3,7 +3,7 @@
 function controller($matchedURI, $data){
     [$controller, $method] = explode('@', array_values($matchedURI)[0]);
 
-    $controllerNameSpace = CONTROLLER_PATH . $controller;
+    $controllerNameSpace = CONTROLLER_PATH . $controller . 'Controller';
     if(!class_exists($controllerNameSpace)){
         throw new Exception("Controller {$controller} não existe");
     }

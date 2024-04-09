@@ -5,7 +5,6 @@ use app\database\Connection;
 
 try {
     $connection = new Connection('localhost', 'db_portifolio', 'root', '');
-    
     $data = router();
 
     extract($data['data']??[]);
@@ -20,7 +19,6 @@ try {
 
     $view = $data['view'];
     
-
     require VIEW_PATH . $view;
 } catch (Exception $e) {
     require VIEW_PATH . 'error.view.php';

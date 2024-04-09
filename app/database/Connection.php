@@ -5,7 +5,7 @@ use PDO;
 
 class Connection {
     private $connection = null;
-    function __construct($host='localhost', $dbname, $user='root', $pwd=''){
+    function __construct($host="localhost", $dbname, $user="root", $pwd=""){
         try{
             $this->connection = new PDO("mysql:host={$host};dbname={$dbname};", $user, $pwd);
             $this->connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -15,7 +15,7 @@ class Connection {
         }
     }
 
-    function Select($statement, $parameters = []){
+    public function Select($statement, $parameters = []){
         try {
             $query = $this->executeStatement($statement, $parameters);
             return $query->fetchAll();
@@ -24,7 +24,7 @@ class Connection {
         }
     }
 
-    function Insert($statement, $parameters = []){
+    public function Insert($statement, $parameters = []){
         try {
             $this->executeStatement($statement, $parameters);
         } catch (Exception $e) {
@@ -32,7 +32,7 @@ class Connection {
         }
     }
 
-    function Update($statement, $parameters = []){
+    public function Update($statement, $parameters = []){
         try {
             $this->executeStatement($statement, $parameters);
         } catch (Exception $e) {
@@ -40,7 +40,7 @@ class Connection {
         }
     }
 
-    function Delete($statement, $parameters = []){
+    public function Delete($statement, $parameters = []){
         try {
             $this->executeStatement($statement, $parameters);
         } catch (Exception $e) {
@@ -48,7 +48,7 @@ class Connection {
         }
     }
 
-    function executeStatement($statement, $parameters){
+    public function executeStatement($statement, $parameters){
         try {
             $query = $this->connection->prepare($statement);
             $query->execute($parameters);
