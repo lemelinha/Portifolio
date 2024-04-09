@@ -32,25 +32,10 @@
         </section>
         <section class="projetos-container">
             <?php
-            $CarouselOnLoad = "";
-            foreach(json_decode($images) as $key => $image){
-                $imageLoad = json_decode($images)->$key[0];
-                $CarouselOnLoad .= "document.getElementById($key).style.backgroundImage = 'url('". $imageLoad ."')';";
-            }
-            echo $CarouselOnLoad;
-            
 
-            echo "
-                <script>
-                    const images = " . str_replace('\/', '/', $images) . ";
-                    console.log(images);
-                    window.load = () => {
-                        $CarouselOnLoad
-                    }
-                </script>
-            ";
 
-            foreach($projects as $id => $project): ?>
+// printando os projetos
+foreach($projects as $id => $project): ?>
                 <div class="projeto">
                         <div class="carousel-container">
                             <span></span>
@@ -67,7 +52,20 @@
                             </div>
                         </div>
                     </div>
-            <?php endforeach; ?>
+            <?php endforeach; 
+            // carregando as primeiras imagens de cada carousel
+            $CarouselOnWindowLoad = "";
+            foreach(json_decode($images) as $key => $image){
+                $imageLoad = json_decode($images)->$key[0];
+                $CarouselOnWindowLoad .= "document.getElementById('$key').style.backgroundImage = \"url('". $imageLoad ."')\";\n";
+            }
+
+            echo "
+                <script>
+                    const images = " . str_replace('\/', '/', $images) . ";
+                    console.log(images);
+                    window.onload = () => { $CarouselOnWindowLoad };
+                </script>"; ?>
                 <!--
                     <div class="projeto">
                         <div class="carousel-container">
