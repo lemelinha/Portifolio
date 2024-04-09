@@ -4,7 +4,7 @@ require 'bootstrap.php';
 use app\database\Connection;
 
 try {
-    $connection = new Connection('localhost','db_portifolio', 'root', '');
+    $connection = new Connection('localhost', 'db_portifolio', 'root', '');
     $data = router();
 
     extract($data['data']??[]);
