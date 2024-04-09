@@ -9,33 +9,30 @@
 </head>
 <body>
     <header>
-        <img src="<?= ASSETS . 'personal/PFP.jfif' ?>" alt="Foto Pessoal">
+        <img src="<?= $adminInfo->cd_caminho_pfp ?>" alt="Foto Pessoal">
         <h1>Lucas Leme</h1>
         <nav>
-            <a href="#" target="_blank"><i class="fa-brands fa-square-github fa-2xl"></i></a>
-            <a href="#" target="_blank"><i class="fa-brands fa-linkedin fa-2xl"></i></a>
+            <a href="<?= $adminInfo->lk_github ?>" target="_blank"><i class="fa-brands fa-square-github fa-2xl"></i></a>
+            <a href="<?= $adminInfo->lk_linkedin ?>" target="_blank"><i class="fa-brands fa-linkedin fa-2xl"></i></a>
         </nav>
     </header>
     <main>
         <section class="sobre-mim">
             <h2>Sobre Mim</h2>
             <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi, blanditiis error? Doloribus non, qui ab iure minima magni rem, porro ex repellendus dignissimos error similique doloremque rerum, maxime a dolorem. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione laborum ipsa asperiores, quibusdam ut exercitationem suscipit reiciendis maiores quidem eaque voluptate rem accusantium quod harum magnam facilis quos quasi explicabo.
-
+                <?= $adminInfo->ds_sobre_mim ?>
             </p>
         </section>
         <section class="tecnologias">
             <h2>Tecnologias</h2>
             <p>
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Alias similique blanditiis tempore rerum ut culpa facere iusto temporibus quis cupiditate ullam sapiente est reiciendis amet, fugit quam. Repudiandae, quod rerum.
+                <?= $adminInfo->ds_tecnologias ?>
             </p>
         </section>
         <section class="projetos-container">
             <?php
-
-
-// printando os projetos
-foreach($projects as $id => $project): ?>
+                // printando os projetos
+                foreach($projects as $id => $project): ?>
                 <div class="projeto">
                         <div class="carousel-container">
                             <span></span>
@@ -66,25 +63,6 @@ foreach($projects as $id => $project): ?>
                     console.log(images);
                     window.onload = () => { $CarouselOnWindowLoad };
                 </script>"; ?>
-                <!--
-                    <div class="projeto">
-                        <div class="carousel-container">
-                            <span></span>
-                            <div id="1"></div>
-                            <div class="btns">
-                                <button id="previous" onclick="previousImage(1)"></button>
-                                <button id="next" onclick="nextImage(1)"></button>
-                            </div>
-                        </div>
-                        <script src="<?= JS . 'script.js' ?>"></script>
-                        <div class="sobre-projeto">
-                            <h2>Titulo</h2>
-                            <div class="descricao">
-                                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nostrum, officiis necessitatibus quis reprehenderit omnis esse reiciendis optio architecto quo aliquam voluptates, minus aspernatur consequuntur pariatur debitis illum expedita, fuga ipsam! Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia natus cum et aut dolorum delectus voluptatem labore iure velit ullam, sunt, magnam repellat exercitationem, rem rerum illo assumenda repudiandae deserunt.
-                            </div>
-                        </div>
-                    </div>
-                -->
                 <script src="<?= JS . 'script.js' ?>"></script>
             </section>
     </main>

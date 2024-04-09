@@ -42,7 +42,13 @@ class Home {
         return [$projects, $imagesArray];
     }
 
-    public function getAdminInfos(){
-        return;
+    public function getAdminInfo(){
+        $sql = "
+            SELECT a.cd_caminho_curriculo, a.ds_sobre_mim, a.ds_tecnologias, a.cd_caminho_pfp, a.lk_github, a.lk_linkedin
+            FROM tb_admin as a
+        ";
+        $adminInfo = $GLOBALS['connection']->Select($sql)[0];
+
+        return $adminInfo;
     }
 }

@@ -12,13 +12,15 @@ class HomeController {
 
     public function index(){
         [$projects, $images] = $this->HomeModel->listProjects();
+        $adminInfo = $this->HomeModel->getAdminInfo();
 
         return [
             "view" => "home.view.php",
             "data" => [
                 "title" => "existe",
                 "projects" => $projects,
-                "images" => json_encode($images)
+                "images" => json_encode($images),
+                "adminInfo" => $adminInfo
             ]
         ];
     }
