@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portifólio</title>
-    <link rel="stylesheet" href="<?= CSS . 'style.css?v=' . time() ?>">
+    <link rel="stylesheet" href="<?= CSS . 'style.css'?>">
     <script src="https://kit.fontawesome.com/cdd96683ff.js" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -31,24 +31,64 @@
             </p>
         </section>
         <section class="projetos-container">
-            <div class="projeto">
-                <div class="carousel-container">
-                    <span></span>
-                    <div id="1"></div>
-                    <div class="btns">
-                        <button id="previous" onclick="previousImage(1)"></button>
-                        <button id="next" onclick="nextImage(1)"></button>
+            <?php
+            $CarouselOnLoad = "";
+            foreach(json_decode($images) as $key => $image){
+                $imageLoad = json_decode($images)->$key[0];
+                $CarouselOnLoad .= "document.getElementById($key).style.backgroundImage = 'url('". $imageLoad ."')';";
+            }
+            echo $CarouselOnLoad;
+            
+
+            echo "
+                <script>
+                    const images = " . str_replace('\/', '/', $images) . ";
+                    console.log(images);
+                    window.load = () => {
+                        $CarouselOnLoad
+                    }
+                </script>
+            ";
+
+            foreach($projects as $id => $project): ?>
+                <div class="projeto">
+                        <div class="carousel-container">
+                            <span></span>
+                            <div id="<?= $id ?>"></div>
+                            <div class="btns">
+                                <button id="previous" onclick="previousImage(<?= $id ?>)"></button>
+                                <button id="next" onclick="nextImage(<?= $id ?>)"></button>
+                            </div>
+                        </div>
+                        <div class="sobre-projeto">
+                            <h2><?= $project->nm_projeto ?></h2>
+                            <div class="descricao">
+                                <p><?= $project->ds_projeto ?></p>
+                            </div>
+                        </div>
                     </div>
-                </div>
+            <?php endforeach; ?>
+                <!--
+                    <div class="projeto">
+                        <div class="carousel-container">
+                            <span></span>
+                            <div id="1"></div>
+                            <div class="btns">
+                                <button id="previous" onclick="previousImage(1)"></button>
+                                <button id="next" onclick="nextImage(1)"></button>
+                            </div>
+                        </div>
+                        <script src="<?= JS . 'script.js' ?>"></script>
+                        <div class="sobre-projeto">
+                            <h2>Titulo</h2>
+                            <div class="descricao">
+                                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nostrum, officiis necessitatibus quis reprehenderit omnis esse reiciendis optio architecto quo aliquam voluptates, minus aspernatur consequuntur pariatur debitis illum expedita, fuga ipsam! Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia natus cum et aut dolorum delectus voluptatem labore iure velit ullam, sunt, magnam repellat exercitationem, rem rerum illo assumenda repudiandae deserunt.
+                            </div>
+                        </div>
+                    </div>
+                -->
                 <script src="<?= JS . 'script.js' ?>"></script>
-                <div class="sobre-projeto">
-                    <h2>Titulo</h2>
-                    <div class="descricao">
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nostrum, officiis necessitatibus quis reprehenderit omnis esse reiciendis optio architecto quo aliquam voluptates, minus aspernatur consequuntur pariatur debitis illum expedita, fuga ipsam! Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia natus cum et aut dolorum delectus voluptatem labore iure velit ullam, sunt, magnam repellat exercitationem, rem rerum illo assumenda repudiandae deserunt.
-                    </div>
-                </div>
-            </div>
-        </section>
+            </section>
     </main>
 </body>
 </html>

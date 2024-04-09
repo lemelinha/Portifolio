@@ -1,14 +1,3 @@
-const images = [
-    'http://localhost:5000/assets/images/carousel1/image1.jpg',
-    'http://localhost:5000/assets/images/carousel1/image2.jpg',
-    'http://localhost:5000/assets/images/carousel1/image3.jpg'
-];
-
-window.onload = function () {
-    const imageCarousel = document.getElementById('1');
-    imageCarousel.style.backgroundImage = 'url(' + images[0] + ')';
-};
-
 function nextImage (carouselId) {
     const imageCarousel = document.getElementById(carouselId);
     let i = images.indexOf(imageCarousel.style.backgroundImage.split('"')[1]);

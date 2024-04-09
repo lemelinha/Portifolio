@@ -10,11 +10,15 @@ class HomeController {
         $this->HomeModel = new Home();
     }
 
-    public function index(){       
+    public function index(){
+        [$projects, $images] = $this->HomeModel->listProjects();
+
         return [
             "view" => "home.view.php",
             "data" => [
-                "title" => "existe"
+                "title" => "existe",
+                "projects" => $projects,
+                "images" => json_encode($images)
             ]
         ];
     }
