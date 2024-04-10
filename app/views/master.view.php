@@ -10,5 +10,6 @@
 </head>
 <body>
     <?php require $view ?>
+    <script src="<?= JS . 'script.js' ?>"></script>
 </body>
 </html>

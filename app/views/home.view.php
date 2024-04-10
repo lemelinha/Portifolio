@@ -42,10 +42,11 @@
                 </div>
         <?php endforeach; 
         // carregando as primeiras imagens de cada carousel
+        $imagesDecoded = json_decode($images);
         $CarouselOnWindowLoad = "";
-        foreach(json_decode($images) as $key => $image){
-            $imageLoad = json_decode($images)->$key[0];
-            $CarouselOnWindowLoad .= "document.getElementById('$key').style.backgroundImage = \"url('". $imageLoad ."')\";\n";
+        foreach($imagesDecoded as $id => $image){
+            $imageLoad = $imagesDecoded->$id[0];
+            $CarouselOnWindowLoad .= "document.getElementById('$id').style.backgroundImage = \"url('". $imageLoad ."')\";\n";
         }
 
         echo "
@@ -54,6 +55,5 @@
                 console.log(images);
                 window.onload = () => { $CarouselOnWindowLoad };
             </script>"; ?>
-            <script src="<?= JS . 'script.js' ?>"></script>
         </section>
 </main>

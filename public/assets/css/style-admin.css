@@ -44,6 +44,7 @@ section.pessoal div.img {
     width: 180px;
     height: 180px;
     border-radius: 50%;
+    border: 1px solid var(--color-detach);
 }
 
 section.pessoal h1 {
@@ -59,6 +60,7 @@ div.projeto {
     background-color: var(--color-background-complement);
     width: 80vw;
     padding: 20px;
+    margin-bottom: 10px;
     border: 1px solid var(--color-title);
     border-radius: 8px;
     display: flex;
