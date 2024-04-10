@@ -18,6 +18,7 @@ class HomeController {
             "view" => "home.view.php",
             "data" => [
                 "title" => "Lucas Leme",
+                "css" => "style.css",
                 "projects" => $projects,
                 "images" => json_encode($images),
                 "adminInfo" => $adminInfo

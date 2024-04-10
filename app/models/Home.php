@@ -3,7 +3,7 @@
 namespace app\models;
 
 class Home {
-    public function listProjects(){
+    public static function listProjects(){
         $sql = "
             SELECT p.cd_projeto, p.nm_projeto, p.ds_projeto, p.lk_github, p.lk_expo, p.lk_online
             FROM tb_projeto as p
@@ -42,7 +42,7 @@ class Home {
         return [$projects, $imagesArray];
     }
 
-    public function getAdminInfo(){
+    public static function getAdminInfo(){
         $sql = "
             SELECT a.cd_caminho_curriculo, a.ds_sobre_mim, a.ds_tecnologias, a.cd_caminho_pfp, a.lk_github, a.lk_linkedin
             FROM tb_admin as a
