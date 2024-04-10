@@ -19,8 +19,9 @@ try {
 
     $view = $data['view'];
     
-    require VIEW_PATH . $view;
+    require VIEW_PATH . 'master.view.php';
 } catch (Exception $e) {
-    require VIEW_PATH . 'error.view.php';
+    $view = 'error.view.php';
+    require VIEW_PATH . 'master.view.php';
     die();
 }

@@ -17,7 +17,7 @@ class HomeController {
         return [
             "view" => "home.view.php",
             "data" => [
-                "title" => "existe",
+                "title" => "Lucas Leme",
                 "projects" => $projects,
                 "images" => json_encode($images),
                 "adminInfo" => $adminInfo
