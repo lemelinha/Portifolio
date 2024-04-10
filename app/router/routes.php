@@ -2,6 +2,6 @@
 
 return [
     '/' => 'Home@index',
-    '/admin' => 'Admin@verify',
+    '/admin' => 'Admin@index',
     '/logout' => 'Admin@logout'
 ];

@@ -11,13 +11,13 @@ class AdminController {
         $this->AdminModel = new Admin();
     }
 
-    public function verify(){
-        if ($this->AdminModel->verifyLogin()){
+    public function index(){
+        $view = 'admin/admin-login.view.php';
+
+        if ($this->verify()){
             $view = 'admin/admin-index.view.php';
             [$projects, $images] = Home::listProjects();
             $adminInfo = Home::getAdminInfo();
-        } else {
-            $view = 'admin/admin-login.view.php';
         }
 
         return [
@@ -25,11 +25,19 @@ class AdminController {
             "data" => [
                 'title' => 'Admin',
                 'css' => 'style-admin.css',
-                'adminInfo' => $adminInfo??null,
+                'adminPFP' => $adminInfo->cd_caminho_pfp??null,
                 'projects' => $projects??null,
                 'images' => $images??null
             ]
         ];
+    }
+
+    public function verify(){
+        if ($this->AdminModel->verifyLogin()){
+            return true;
+        }
+
+        return false;
     }
 
     public function logout(){

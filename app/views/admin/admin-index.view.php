@@ -10,6 +10,8 @@
         </div>
     </section>
     <section class="projetos">
+        
+    <!--
         <div class="projeto">
             <div class="img"></div>
             <div class="apresentacao">
@@ -20,5 +22,6 @@
                 <button><i class="fa-solid fa-trash fa-2xl"></i></button>
             </div>
         </div>
+    -->
     </section>
 </main>
