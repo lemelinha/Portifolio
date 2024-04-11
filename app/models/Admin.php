@@ -3,40 +3,61 @@
 namespace app\models;
 
 class Admin {
-    public function verifyLogin(){
-        $userPwd = $_POST['senha']??null;
-
+    public function addProject(){
         $sql = "
-            SELECT a.cd_senha from tb_admin as a
+            insert into tb_projeto values
+            (default, ?, ?, ?, ?, ?)
         ";
-        $adminPwd = $GLOBALS['connection']->Select($sql)[0]->cd_senha;
+        $params = [
+            $_POST['titulo'],
+            $_POST['descricao'],
+            $_POST['github']??null,
+            $_POST['expo']??null,
+            $_POST['online']??null
+        ];
 
-        if (isset($_SESSION['auth']) && $_SESSION['auth']){
+        try {
+            $GLOBALS['connection']->Insert($sql, $params);
             return true;
-        }
-
-        if (!isset($userPwd)){
+        } catch (Exception $e) {
             return false;
         }
-
-        if (password_verify($userPwd, $adminPwd)){
-            $_SESSION['auth'] = true;
-            return true;
-        }
-
-        unset($_SESSION['auth']);
-        return false;
     }
 
     public function editProject(){
         return;
     }
-
+    
     public function editAdminInfo(){
         return;
     }
-
+    
     public function deleteProject(){
         return;
+    }
+
+    public function verifyLogin(){
+        $userPwd = $_POST['senha']??null;
+    
+        $sql = "
+            SELECT a.cd_senha from tb_admin as a
+        ";
+        $adminPwd = $GLOBALS['connection']->Select($sql)[0]->cd_senha;
+    
+        if (isset($_SESSION['auth']) && $_SESSION['auth']){
+            return true;
+        }
+    
+        if (!isset($userPwd)){
+            return false;
+        }
+    
+        if (password_verify($userPwd, $adminPwd)){
+            $_SESSION['auth'] = true;
+            return true;
+        }
+    
+        unset($_SESSION['auth']);
+        return false;
     }
 }

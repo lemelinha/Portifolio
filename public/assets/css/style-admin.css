@@ -56,6 +56,11 @@ section.pessoal div.btns {
     flex-direction: row;
 }
 
+button#addProjeto {
+    background-color: var(--color-detach);
+    align-self: flex-end;
+}
+
 div.projeto {
     background-color: var(--color-background-complement);
     width: 80vw;
@@ -71,7 +76,6 @@ div.projeto {
 }
 
 div.img {
-    background-image: url('../images/carousel1/image1.jpg');
     background-position: center center;
     background-size: cover;
     width: 160px;

@@ -1,7 +1,11 @@
 <!-- style-admin.css -->
 <?php
-    if (isset($_POST['senha'])){
+    if (sizeof($_POST) > 1){
         header('Location: /admin');
+    }
+
+    if (isset($alert)){
+        echo $alert;
     }
 ?>
 <main>
@@ -14,6 +18,7 @@
             <button><i class="fa-solid fa-pen-to-square fa-2xl"></i></button>
         </div>
     </section>
+    <button id="addProjeto" onclick="window.location.href = '/admin/add'"><i class="fa-solid fa-plus"></i>Add Projeto</button>
     <section class="projetos">
         <?php
             foreach($projects as $id => $project): ?>
