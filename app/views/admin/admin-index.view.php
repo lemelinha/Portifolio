@@ -1,11 +1,12 @@
 <!-- style-admin.css -->
 <?php
-    if (sizeof($_POST) > 1){
-        header('Location: /admin');
-    }
-
     if (isset($alert)){
         echo $alert;
+        die();
+    }
+    
+    if (sizeof($_POST) > 1){
+        header('Location: /admin');
     }
 ?>
 <main>

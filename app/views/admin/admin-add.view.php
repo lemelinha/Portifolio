@@ -50,13 +50,14 @@
 </style>
 
 <?php
+    if (isset($alert)){
+        echo $alert;
+    }
+
     if (sizeof($_POST) > 1){
         header('Location: /admin/add');
     }
 
-    if (isset($alert)){
-        echo $alert;
-    }
 ?>
 
 <button onclick='window.location.href = "/admin"'>Voltar</button>
