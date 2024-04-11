@@ -76,6 +76,11 @@ main .tecnologias h2 {
     margin-bottom: 5px;
 }
 
+.tecnologias ul {
+    list-style-position: inside;
+    columns: 2;
+}
+
 .projeto-container{
     max-width: 80vw;
     color: var(--color-text);
@@ -140,5 +145,11 @@ button#previous {
 @media (max-width: 650px){
     .projeto {
         flex-direction: column;
+    }
+}
+
+@media (max-width: 420px){
+    .tecnologias ul {
+        columns: auto;
     }
 }
