@@ -60,6 +60,31 @@ class AdminController {
         ];
     }
 
+    public function editProject($params){ // params recebe o id do projeto a ser editado
+        $view = 'admin/admin-login.view.php';
+        $title = 'Login';
+
+        if($this->verify()){
+            $view = 'admin/admin-edit-project.view.php';
+            $title = 'Editar Projeto';
+        }
+
+        if (isset($_POST['editar'])){
+            $this->AdminModel->editProject($params['edit']); // $params['edit'] é o id do projeto
+        }
+
+        $projectInfo = $this->AdminModel->getProjectInfo($params['edit']);
+
+        return [
+            "view" => $view,
+            "data" => [
+                "title" => $title,
+                "css" => "style-admin.css",
+                "projectInfo" => $projectInfo??null
+            ]
+        ];
+    }
+
     public function editAdmin(){
         $view = 'admin/admin-login.view.php';
         $title = 'Admin';
@@ -80,7 +105,7 @@ class AdminController {
             "data" => [
                 "title" => $title,
                 "css" => 'style-admin.css',
-                "adminInfo" => $adminInfo
+                "adminInfo" => $adminInfo??null
             ]
         ];
     }

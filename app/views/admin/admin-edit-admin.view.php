@@ -25,7 +25,7 @@
     <label for="tecnologias">Tecnologias</label>
     <textarea name="tecnologias" id="tecnologias" cols="30" rows="10" required> <?= $adminInfo->ds_tecnologias ?> </textarea>
     <label for="github">Link para o GitHub</label>
-    <input type="text" name="github" id="github" value="<?= $adminInfo->lk_github ?>">
+    <input type="text" name="github" id="github" required value="<?= $adminInfo->lk_github ?>">
     <label for="linkedin">Link para o Linkedin</label>
     <input type="text" name="linkedin" id="linkedin" required value="<?= $adminInfo->lk_linkedin ?>">
     <input type="submit" value="Editar" name="editar">

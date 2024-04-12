@@ -24,10 +24,39 @@ class Admin {
         }
     }
 
-    public function editProject(){
-        return;
+    public function editProject($id){
+        $sql = "
+                UPDATE tb_projeto
+                SET
+                    nm_projeto = ?,
+                    ds_projeto = ?,
+                    lk_github = ?,
+                    lk_expo = ?,
+                    lk_online = ?
+                WHERE cd_projeto = ?
+        ";
+        $params = [
+            $_POST['titulo'],
+            $_POST['descricao'],
+            $_POST['github'],
+            $_POST['expo'],
+            $_POST['online'],
+            $id
+        ];
+
+        $GLOBALS['connection']->Update($sql, $params);
+        header('Location: /admin');
     }
     
+    public function getProjectInfo($id){
+        $sql = "
+                SELECT * FROM tb_projeto
+                WHERE cd_projeto = ?
+        ";
+        $projectInfo = $GLOBALS['connection']->Select($sql, [$id])[0];
+        return $projectInfo;
+    }
+
     public function editAdminInfo(){
         $sql = "
                 UPDATE tb_admin
