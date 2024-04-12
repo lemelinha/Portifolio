@@ -120,6 +120,7 @@ main .tecnologias h2 {
     flex-direction: column;
     column-gap: 10px;
     align-items: center;
+    justify-content: center;
 }
 
 div.btns {
@@ -148,6 +149,34 @@ button#previous {
     height: 380px;
     background-size: cover;
     background-position: center center;
+}
+
+.descricao {
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+}
+
+.descricao div {
+    display: flex;
+    justify-content: flex-start;
+    column-gap: 50px;
+    row-gap: 20px;
+}
+
+.descricao ul {
+    list-style-position: inside;
+}
+
+.links {
+    display: flex;
+    column-gap: 10px;
+}
+
+@media (max-width: 850px){
+    .descricao div {
+        flex-direction: column;
+    }
 }
 
 @media (max-width: 650px){

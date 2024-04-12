@@ -36,12 +36,12 @@
                     <div class="sobre-projeto">
                         <h2><?= $project->nm_projeto ?></h2>
                         <div class="descricao">
-                            <p><?= $project->ds_projeto ?></p>
+                            <?= $project->ds_projeto ?>
                         </div>
                         <div class="links">
-                            <?= $project->lk_github!=null?"<a href='{$project->lk_github}'>Visualizar no GitHub</a>":'' ?>
-                            <?= $project->lk_expo!=null?"<a href='{$project->lk_expo}'>Visualizar no Expo</a>":'' ?>
-                            <?= $project->lk_online!=null?"<a href='{$project->lk_online}'>Visualizar Online</a>":'' ?>
+                            <?= $project->lk_github!=null?"<a href='{$project->lk_github}' target='_blank'>Visualizar no GitHub</a>":'' ?>
+                            <?= $project->lk_expo!=null?"<a href='{$project->lk_expo}' target='_blank'>Visualizar no Expo</a>":'' ?>
+                            <?= $project->lk_online!=null?"<a href='{$project->lk_online}' target='_blank'>Visualizar Online</a>":'' ?>
                         </div>
                     </div>
                 </div>
