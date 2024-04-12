@@ -5,7 +5,7 @@
         die();
     }
     
-    if (sizeof($_POST) > 1){
+    if (sizeof($_POST) >= 1){
         header('Location: /admin');
     }
 ?>
@@ -16,7 +16,7 @@
         <div class="img" style="background-image: url('<?= $adminPFP ?>')"></div>
         <h1>Lucas Leme</h1>
         <div class="btns">
-            <button><i class="fa-solid fa-pen-to-square fa-2xl"></i></button>
+            <button onclick="window.location.href = '/admin/edit/admin'"><i class="fa-solid fa-pen-to-square fa-2xl"></i></button>
         </div>
     </section>
     <button id="addProjeto" onclick="window.location.href = '/admin/add'"><i class="fa-solid fa-plus"></i>Add Projeto</button>

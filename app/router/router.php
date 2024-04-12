@@ -32,6 +32,11 @@ function router(){
     $routes = require 'routes.php';
     $uri = $_SERVER["REQUEST_URI"];
     
+    if($uri[-1] == '/'){
+        $uri = rtrim($uri, '/');
+        header("Location: {$uri}");
+    }
+
     $matchedURI = searchExactURIInRoutes($uri, $routes);
     $data = [];
     if(!$matchedURI){

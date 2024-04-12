@@ -35,7 +35,7 @@ class AdminController {
         ];
     }
 
-    public function add(){
+    public function addProject(){
         $view = 'admin/admin-login.view.php';
         $title = "Login";
 
@@ -46,14 +46,7 @@ class AdminController {
 
         if (isset($_POST['titulo']) && $_POST['descricao']){
             if ($this->AdminModel->addProject()) {
-                $alert = "<script>
-                            alert('Projeto Adicionado com sucesso!')
-                          </script>";
                 $view = 'admin/admin-index.view.php';
-            } else {
-                $alert = "<script>
-                            alert('Algo deu errado!')
-                          </script>";
             }
         }
 
@@ -63,6 +56,31 @@ class AdminController {
                 "title" => $title,
                 "css" => 'style-admin.css',
                 "alert" => $alert??null
+            ]
+        ];
+    }
+
+    public function editAdmin(){
+        $view = 'admin/admin-login.view.php';
+        $title = 'Admin';
+        
+        if($this->verify()){
+            $view = 'admin/admin-edit-admin.view.php';
+            $title = 'Editar Pessoal';
+        }
+
+        if (isset($_POST['editar'])){
+            $this->AdminModel->editAdminInfo();
+        } 
+
+        $adminInfo = $this->AdminModel->getAdminInfo();
+
+        return [
+            "view" => $view,
+            "data" => [
+                "title" => $title,
+                "css" => 'style-admin.css',
+                "adminInfo" => $adminInfo
             ]
         ];
     }

@@ -8,38 +8,6 @@
         padding: 10px;
     }
 
-    form {
-        display: flex;
-        flex-direction: column;
-        row-gap: 8px;
-
-    }
-
-    label {
-        margin-top: 10px;
-    }
-
-    input {
-        padding: 10px 20px;
-        border-radius: 8px;
-        background-color: #eee;
-        transition: 200ms;
-        margin-top: 5px;
-    }
-    
-    input:hover,
-    input:focus {
-        background-color: #ccc;
-        filter: grayscale(36%);
-    }
-    
-    input[type="submit"]{
-        cursor: pointer;
-        background-color: var(--color-detach);
-        font-size: 14px;
-        font-weight: bold;
-    }
-
     button {
         background-color: var(--color-detach);
         padding: 10px 20px;

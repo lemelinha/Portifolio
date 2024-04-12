@@ -76,6 +76,10 @@ main .tecnologias h2 {
     margin-bottom: 5px;
 }
 
+.tecnologias p {
+    margin-bottom: 5px;
+}
+
 .tecnologias ul {
     list-style-position: inside;
     columns: 2;
@@ -105,6 +109,10 @@ main .tecnologias h2 {
 
 .projeto .sobre-projeto {
     flex: 6;
+    display: flex;
+    flex-direction: column;
+    row-gap: 15px;
+    justify-content: space-around;
 }
 
 .carousel-container {

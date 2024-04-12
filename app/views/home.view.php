@@ -38,6 +38,11 @@
                         <div class="descricao">
                             <p><?= $project->ds_projeto ?></p>
                         </div>
+                        <div class="links">
+                            <?= $project->lk_github!=null?"<a href='{$project->lk_github}'>Visualizar no GitHub</a>":'' ?>
+                            <?= $project->lk_expo!=null?"<a href='{$project->lk_expo}'>Visualizar no Expo</a>":'' ?>
+                            <?= $project->lk_online!=null?"<a href='{$project->lk_online}'>Visualizar Online</a>":'' ?>
+                        </div>
                     </div>
                 </div>
         <?php endforeach; 

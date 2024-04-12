@@ -29,9 +29,34 @@ class Admin {
     }
     
     public function editAdminInfo(){
-        return;
+        $sql = "
+                UPDATE tb_admin
+                SET
+                    ds_sobre_mim = ?,
+                    ds_tecnologias = ?,
+                    lk_github = ?,
+                    lk_linkedin = ?
+                WHERE cd_admin = 1
+        ";
+        $params = [
+            $_POST['sobre-mim'],
+            $_POST['tecnologias'],
+            $_POST['github'],
+            $_POST['linkedin']
+        ];
+        $GLOBALS['connection']->Update($sql, $params);
+        header('Location: /admin');
     }
     
+    public function getAdminInfo(){
+        $sql = "
+                SELECT ds_sobre_mim, ds_tecnologias, lk_github, lk_linkedin FROM tb_admin
+        ";
+        $adminInfo = $GLOBALS['connection']->Select($sql)[0];
+
+        return $adminInfo;
+    }
+
     public function deleteProject(){
         return;
     }
