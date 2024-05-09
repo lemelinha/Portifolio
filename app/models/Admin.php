@@ -1,8 +1,9 @@
 <?php
 
-namespace app\models;
+namespace App\Models;
+use Needs\Model\Model;
 
-class Admin {
+class Admin extends Model {
     public function addProject(){
         $sql = "
             insert into tb_projeto values

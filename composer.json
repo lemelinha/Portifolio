@@ -3,14 +3,9 @@
     "description": "Portifólio Profissional",
     "autoload": {
         "psr-4": {
-            "app\\": "app/"
-        },
-        "files": [
-            "app/router/router.php",
-            "app/helpers/constants.php",
-            "app/core/controller.php",
-            "app/database/Connection.php"
-        ]
+            "App\\": "App/",
+            "Needs\\": "vendor/Needs/"
+        }
     },
     "authors": [
         {
@@ -18,5 +13,7 @@
             "email": "l.leme3008@gmail.com"
         }
     ],
-    "require": {}
+    "require": {
+        "vlucas/phpdotenv": "^5.6"
+    }
 }
