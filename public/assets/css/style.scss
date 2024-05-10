@@ -15,6 +15,7 @@ $color-background-complement: #161B22;
 $color-title: #0d57ac;
 $color-text: #FFFFFF;
 $color-detach: #1be401;
+
 $font-title: "Roboto Slab";
 $font-title-secundary: "Montserrat";
 $font-text: "Open Sans";
@@ -46,6 +47,7 @@ body#index {
         background-color: $color-background-complement;
         padding: 20px;
         box-shadow: 0 8px 8px hsl(0deg 0% 0% / 0.075);
+        
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -63,11 +65,13 @@ body#index {
         
         .btn {
             padding: 5px 10px;
+            margin-bottom: 10px;
             border-radius: 4px;
             color: #000;
             font-weight: bold;
             font-size: 18px;
             background-color: $color-detach;
+
             transition: 200ms;
             
             &:hover {

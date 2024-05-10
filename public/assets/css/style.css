@@ -45,6 +45,7 @@ body#index header > h1 {
 }
 body#index header .btn {
   padding: 5px 10px;
+  margin-bottom: 10px;
   border-radius: 4px;
   color: #000;
   font-weight: bold;

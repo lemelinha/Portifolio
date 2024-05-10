@@ -9,31 +9,31 @@
 </head>
 <body id="index">
     <header>
-        <img src="<?= $adminInfo->cd_caminho_pfp ?>" alt="Foto Pessoal">
+        <img src="/<?= $this->adminInfo->pfp ?>" alt="Foto Pessoal">
         <h1>Lucas Leme</h1>
-        <button type="button" class="btn" onclick="window.open('<?= $adminInfo->cd_caminho_curriculo ?>', '_blank')">Baixar Currículo</button>
+        <a type="button" class="btn" href="<?= $this->adminInfo->curriculo ?>" target="_blank">Baixar Currículo</a>
         <nav>
-            <a href="<?= $adminInfo->lk_github ?>" target="_blank"><i class="fa-brands fa-square-github fa-2xl"></i></a>
-            <a href="<?= $adminInfo->lk_linkedin ?>" target="_blank"><i class="fa-brands fa-linkedin fa-2xl"></i></a>
+            <a href="<?= $this->adminInfo->github ?>" target="_blank"><i class="fa-brands fa-square-github fa-2xl"></i></a>
+            <a href="<?= $this->adminInfo->linkedin ?>" target="_blank"><i class="fa-brands fa-linkedin fa-2xl"></i></a>
         </nav>
     </header>
     <main>
         <section class="sobre-mim">
             <h2>Sobre Mim</h2>
             <p>
-                <?= $adminInfo->ds_sobre_mim ?>
+                <?= $this->adminInfo->sobre_mim ?>
             </p>
         </section>
         <section class="tecnologias">
             <h2>Tecnologias</h2>
             <p>
-                <?= $adminInfo->ds_tecnologias ?>
+                <?= $this->adminInfo->tecnologias ?>
             </p>
         </section>
         <section class="projetos-container">
             <?php
                 // printando os projetos
-                foreach($projects as $id => $project): ?>
+                foreach($this->projects as $id => $project): ?>
                 <div class="projeto">
                         <div class="carousel-container">
                             <span></span>
@@ -44,29 +44,29 @@
                             </div>
                         </div>
                         <div class="sobre-projeto">
-                            <h2><?= $project->nm_projeto ?></h2>
+                            <h2><?= $project->nome ?></h2>
                             <div class="descricao">
-                                <?= $project->ds_projeto ?>
+                                <?= $project->descricao ?>
                             </div>
                             <div class="links">
-                                <?= $project->lk_github!=null?"<a href='{$project->lk_github}' target='_blank'>Visualizar no GitHub</a>":'' ?>
-                                <?= $project->lk_expo!=null?"<a href='{$project->lk_expo}' target='_blank'>Visualizar no Expo</a>":'' ?>
-                                <?= $project->lk_online!=null?"<a href='{$project->lk_online}' target='_blank'>Visualizar Online</a>":'' ?>
+                                <?= $project->github!=null?"<a href='{$project->github}' target='_blank'>Visualizar no GitHub</a>":'' ?>
+                                <?= $project->expo!=null?"<a href='{$project->expo}' target='_blank'>Visualizar no Expo</a>":'' ?>
+                                <?= $project->online!=null?"<a href='{$project->online}' target='_blank'>Visualizar Online</a>":'' ?>
                             </div>
                         </div>
                     </div>
             <?php endforeach; 
             // carregando as primeiras imagens de cada carousel
-            $imagesDecoded = json_decode($images);
+            $imagesDecoded = $this->images;
             $CarouselOnWindowLoad = "";
             foreach($imagesDecoded as $id => $image){
-                $imageLoad = $imagesDecoded->$id[0];
+                $imageLoad = $imagesDecoded->$id;
                 $CarouselOnWindowLoad .= "document.getElementById('$id').style.backgroundImage = \"url('". $imageLoad ."')\";\n";
             }
     
             echo "
                 <script>
-                    const images = " . str_replace('\/', '/', $images) . ";
+                    const images = " . str_replace('\/', '/', $this->images) . ";
                     console.log(images);
                     window.onload = () => { $CarouselOnWindowLoad };
                 </script>"; ?>

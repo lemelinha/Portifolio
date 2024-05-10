@@ -17,7 +17,9 @@ abstract class Connection {
 
             return $conn;
         } catch (\PDOException $e) {
-            echo $e->getMessage();
+            $erro = $e->getMessage();
+            require 'Views/error.php';
+            die();
         }
     }
 }
