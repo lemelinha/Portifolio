@@ -1,21 +1,47 @@
-function nextImage (carouselId) {
-    const imageCarousel = document.getElementById(carouselId);
-    let i = images[carouselId].indexOf(imageCarousel.style.backgroundImage.split('"')[1]);
-    if (i === images[carouselId].length - 1){
-        i = 0;
-    } else {
-        i += 1;
-    }
-    imageCarousel.style.backgroundImage = 'url(' + images[carouselId][i] + ')';
-}
+let projects_images = {} // objeto com cada projeto e suas imagens
+$(document).ready(function () {
+    $('.projeto').each(function () {
+        let project_id = $(this).attr('id')
+        projects_images[project_id] = $(this).find('.carousel-container img').map(function () { return $(this) }).get()
+    })
+});
 
-function previousImage (carouselId) {
-    const imageCarousel = document.getElementById(carouselId);
-    let i = images[carouselId].indexOf(imageCarousel.style.backgroundImage.split('"')[1]);
-    if (i === 0){
-        i = images[carouselId].length - 1;
+$('.previous').on('click', function () {
+    let project_id = $(this).attr('id');
+    let images_array = projects_images[project_id]
+    Object.values(images_array).forEach(image => {
+        if (image.css('display') == 'block'){
+            currentImage = images_array.indexOf(image)
+        }
+    })
+
+    images_array[currentImage].css('display', 'none')
+    if (currentImage === 0) {
+        previousImage = images_array.length - 1
     } else {
-        i -= 1;
+        previousImage = currentImage - 1
     }
-    imageCarousel.style.backgroundImage = 'url(' + images[carouselId][i] + ')';
-}
+
+    images_array[previousImage].css('display', 'block')
+    return
+});
+
+$('.next').on('click', function () {
+    let project_id = $(this).attr('id');
+    let images_array = projects_images[project_id]
+    Object.values(images_array).forEach(image => {
+        if (image.css('display') == 'block'){
+            currentImage = images_array.indexOf(image)
+        }
+    })
+
+    images_array[currentImage].css('display', 'none')
+    if (currentImage === images_array.length - 1) {
+        nextImage = 0
+    } else {
+        nextImage = currentImage + 1
+    }
+
+    images_array[nextImage].css('display', 'block')
+    return
+});

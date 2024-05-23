@@ -34,13 +34,14 @@
             <?php
                 // printando os projetos
                 foreach($this->projects as $id => $project): ?>
-                <div class="projeto">
+                    <div class="projeto" id="<?= $id ?>">
                         <div class="carousel-container">
-                            <span></span>
-                            <div id="<?= $id ?>"></div>
+                            <?php foreach($this->images[$id] as $image): ?>
+                                <img src="/<?= $image ?>" style="<?= array_search($image, $this->images[$id])==0?'display: block':'display: none' ?>">
+                            <?php endforeach; ?>
                             <div class="btns">
-                                <button id="previous" onclick="previousImage(<?= $id ?>)"></button>
-                                <button id="next" onclick="nextImage(<?= $id ?>)"></button>
+                                <button class="previous" id="<?= $id ?>"></button>
+                                <button class="next" id="<?= $id ?>"></button>
                             </div>
                         </div>
                         <div class="sobre-projeto">
@@ -55,22 +56,15 @@
                             </div>
                         </div>
                     </div>
-            <?php endforeach; 
-            // carregando as primeiras imagens de cada carousel
-            $imagesDecoded = $this->images;
-            $CarouselOnWindowLoad = "";
-            foreach($imagesDecoded as $id => $image){
-                $imageLoad = $imagesDecoded->$id;
-                $CarouselOnWindowLoad .= "document.getElementById('$id').style.backgroundImage = \"url('". $imageLoad ."')\";\n";
-            }
-    
-            echo "
-                <script>
-                    const images = " . str_replace('\/', '/', $this->images) . ";
-                    console.log(images);
-                    window.onload = () => { $CarouselOnWindowLoad };
-                </script>"; ?>
+            <?php endforeach; ?>
             </section>
+            <!-- Font Awesome -->
+            <script src="https://kit.fontawesome.com/cdd96683ff.js" crossorigin="anonymous"></script>
+
+            <!-- JQuery -->
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+            <script src="/assets/js/script.js"></script>
     </main>
 </body>
 </html>

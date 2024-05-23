@@ -27,161 +27,129 @@ body {
 }
 
 body#index header {
-  background-color: #161B22;
-  padding: 20px;
-  box-shadow: 0 8px 8px hsla(0, 0%, 0%, 0.075);
   display: flex;
   flex-direction: column;
   align-items: center;
-  row-gap: 12px;
+  justify-content: center;
+  row-gap: 15px;
+  background-color: #161B22;
+  padding: 20px;
+  box-shadow: 0 8px 8px rgba(0, 0, 0, 0.075);
 }
 body#index header img {
   border-radius: 50%;
   border: 2px solid #1be401;
 }
-body#index header > h1 {
+body#index header h1 {
   font-family: "Montserrat";
   color: #0d57ac;
 }
-body#index header .btn {
+body#index header > a {
   padding: 5px 10px;
-  margin-bottom: 10px;
   border-radius: 4px;
   color: #000;
-  font-weight: bold;
   font-size: 18px;
+  font-weight: bold;
   background-color: #1be401;
   transition: 200ms;
 }
-body#index header .btn:hover {
-  cursor: pointer;
-  filter: grayscale(40%);
+body#index header > a:hover {
   scale: 1.01;
 }
-body#index header nav {
-  display: flex;
-  column-gap: 10px;
+body#index header nav a + a {
+  margin-left: 5px;
 }
-body#index header i.fa-square-github {
-  color: #010008;
-}
-body#index header i.fa-linkedin {
+body#index header nav .fa-linkedin {
   color: #0e76a8;
 }
 body#index main {
-  padding-bottom: 20px;
+  max-width: 80vw;
+  padding: 20px 0;
+  margin: auto;
 }
 body#index main .sobre-mim,
 body#index main .tecnologias,
 body#index main .projeto {
   padding: 20px;
-  max-width: 80vw;
-  margin: 20px auto;
-  background-color: #161B22;
-  color: #FFFFFF;
+  margin-bottom: 15px;
   border: 1px solid #0d57ac;
   border-radius: 8px;
+  background-color: #161B22;
 }
-body#index main .sobre-mim h2,
-body#index main .tecnologias h2,
-body#index main .projeto h2 {
-  margin-bottom: 5px;
-}
-body#index main .tecnologias p {
-  margin-bottom: 5px;
+body#index main .sobre-mim ul,
+body#index main .tecnologias ul,
+body#index main .projeto ul {
+  list-style-position: inside;
 }
 body#index main .tecnologias ul {
-  list-style-position: inside;
   columns: 2;
 }
-@media (max-width: 420px) {
-  body#index main .tecnologias ul {
-    columns: auto;
-  }
-}
-body#index main .projeto-container {
-  max-width: 80vw;
-  color: #FFFFFF;
-  margin: 30px auto;
-}
-body#index main .projeto-container h2 {
-  color: #0d57ac;
-  font-family: "Montserrat";
-}
-body#index main .projeto-container .projeto {
+body#index main .projeto {
   display: flex;
-  flex-direction: row;
-  column-gap: 15px;
-  row-gap: 15px;
-}
-body#index main .projeto-container .projeto .carousel-container {
-  flex: 2;
-}
-body#index main .projeto-container .projeto .sobre-projeto {
-  flex: 6;
-  display: flex;
-  flex-direction: column;
-  row-gap: 15px;
-  justify-content: space-around;
-}
-@media (max-width: 650px) {
-  body#index main .projeto-container .projeto {
-    flex-direction: column;
-  }
-}
-body#index main .projeto-container .carousel-container {
-  display: flex;
-  flex-direction: column;
-  column-gap: 10px;
-  align-items: center;
-  justify-content: center;
-}
-body#index main .projeto-container .carousel-container .btns {
-  display: flex;
-  flex-direction: row;
+  row-gap: 20px;
   column-gap: 20px;
 }
-body#index main .projeto-container .carousel-container .btns button#next, body#index main .projeto-container .carousel-container .btns button#previous {
+body#index main .projeto .carousel-container {
+  flex: 1;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+body#index main .projeto .carousel-container img {
+  width: 300px;
+  height: 400px;
+  border-radius: 4px;
+}
+body#index main .projeto .carousel-container .btns {
+  display: flex;
+  flex-direction: row;
+}
+body#index main .projeto .carousel-container .btns * {
+  cursor: pointer;
   background-color: transparent;
   background-image: url("../images/arrow-next-small-svgrepo-com.svg");
   width: 2rem;
   height: 2rem;
   border: 0;
-  cursor: pointer;
   display: block;
   background-size: cover;
 }
-body#index main .projeto-container .carousel-container .btns button#previous {
-  transform: rotate(180deg);
+body#index main .projeto .carousel-container .btns .previous {
+  transform: rotateZ(180deg);
 }
-body#index main .projeto-container .carousel-container span + div {
-  width: 280px;
-  height: 380px;
-  background-size: cover;
-  background-position: center center;
+body#index main .projeto .sobre-projeto {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  row-gap: 15px;
+  justify-content: space-around;
 }
-body#index main .projeto-container .descricao {
+body#index main .projeto .sobre-projeto h2 {
+  color: #b8d9ff;
+}
+body#index main .projeto .sobre-projeto .descricao {
   display: flex;
   flex-direction: column;
   row-gap: 10px;
 }
-body#index main .projeto-container .descricao div {
+body#index main .projeto .sobre-projeto .descricao div {
   display: flex;
-  justify-content: flex-start;
-  column-gap: 50px;
+  flex-direction: row;
+  column-gap: 20px;
   row-gap: 20px;
 }
-@media (max-width: 850px) {
-  body#index main .projeto-container .descricao div {
+@media screen and (max-width: 1100px) {
+  body#index main .projeto .sobre-projeto .descricao div {
     flex-direction: column;
   }
 }
-body#index main .projeto-container .descricao ul {
-  list-style-position: inside;
-}
-body#index main .projeto-container .links {
-  display: flex;
-  column-gap: 10px;
+@media screen and (max-width: 900px) {
+  body#index main .projeto {
+    flex-direction: column;
+  }
 }
 
 body#admin {
